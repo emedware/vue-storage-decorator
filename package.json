@@ -1,0 +1,47 @@
+{
+  "name": "vue-storage-decorator",
+  "version": "1.0.0",
+  "description": "Give a Persist decorator to persist vue object properties to some storage",
+  "main": "dist/vue-storage-decorator",
+  "ts:main": "src/index.ts",
+  "typings": "dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "prepack": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eddow/vue-storage-decorator.git"
+  },
+  "keywords": [
+    "vue",
+    "storage",
+    "decorator",
+    "localstorage",
+    "sessionstorage"
+  ],
+  "author": "fmdm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eddow/vue-storage-decorator/issues"
+  },
+  "homepage": "https://github.com/eddow/vue-storage-decorator#readme",
+  "dependencies": {
+    "vue-class-component": "^6.3.2",
+    "vue": "^2.5.17"
+  },
+  "devDependencies": {
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^5.3.0",
+    "typescript": "^3.1.6",
+    "vue": "^2.5.17",
+    "vue-class-component": "^6.3.2",
+    "webpack": "^4.26.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "peerDependencies": {
+    "vue-class-component": "^6.3.2",
+    "vue": "^2.5.17"
+  }
+}
