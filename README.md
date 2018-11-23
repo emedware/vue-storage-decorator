@@ -17,7 +17,7 @@ npm i -S vue-storage-decorator
 
 ```typescript
 import {Persistance} from 'vue-storage-decorator'
-Persist = Persistance("myKey");
+const Persist = Persistance("myKey");
 
 @Component()
 class myApp extends Vue {

@@ -7,7 +7,7 @@ export function Persistance(key: string, storage?: any) {
 			storage.setItem(key, JSON.stringify(persisted));
 		} : ()=> {
 			storage[key] = JSON.stringify(persisted);
-		};
+		}, persistTimeout = null;
 	let retrieved = storage.getItem ? storage.getItem(key) : storage[key];
 	function watchAll(comp) {
 		for(let prop in props)
@@ -16,7 +16,11 @@ export function Persistance(key: string, storage?: any) {
 					prop,
 					(newVal: any, oldVal: any) => {
 						persisted[prop] = newVal;
-						persist();
+						if(!persistTimeout)
+							persistTimeout = setTimeout(()=> {
+								persistTimeout = null;
+								persist();
+							});
 					},
 					props[prop]
 				)
