@@ -4,9 +4,9 @@ import { createDecorator } from 'vue-class-component'
 export function Persistance(key: string, storage?: any) {
 	if(!storage) storage = window.localStorage;
 	var persisted, persitanceMixin, props = {}, persist = storage.setItem ? ()=> {
-			storage.setItem(key, JSON.stringify(persisted));
+			if(Persist.persisting) storage.setItem(key, JSON.stringify(persisted));
 		} : ()=> {
-			storage[key] = JSON.stringify(persisted);
+			if(Persist.persisting) storage[key] = JSON.stringify(persisted);
 		}, persistTimeout = null;
 	let retrieved = storage.getItem ? storage.getItem(key) : storage[key];
 	function watchAll(comp) {
@@ -42,13 +42,13 @@ export function Persistance(key: string, storage?: any) {
 			created() {
 				for(let prop in props)
 					persisted[prop] = this[prop];
-					//Other `created` might have already changed the data
+				//Other `created` might have already changed the data
 				persist();
 				watchAll(this);
 			}
 		};
 	}
-	return function(
+	function Persist(
 		options: WatchOptions = {
 			deep: true
 		}
@@ -61,4 +61,7 @@ export function Persistance(key: string, storage?: any) {
 			})(target, key)
 		}
 	};
+	Persist.persisting = true;
+	Persist.persist = persist;
+	return Persist;
 }

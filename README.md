@@ -33,3 +33,16 @@ This created decorator is then used. It can take an argument : the watch option 
 The decorated members *have to* have an initial value. This one will be overriden by the persisted value if something was persisted.
 
 After the first run of the component here, the `localStorage` will contain `myKey-> {"myProp": 0, "yesNo": true}`.
+
+### Disableing persistance in some cases
+
+It can happen - when you control appears in a main window and a popup for ex. - that the control should in some case stop persisting its changes.
+
+In order to do that, the created `Persistance` has an member `persisting: boolean` that can be changed at any time.
+Also, in order to force the persistance - for ex. when setting `persisting` back to `true` - it has the function `persist`.
+```ts
+Persist.persisting = false;
+....
+Persist.persisting = true;
+Persist.persist();
+```
