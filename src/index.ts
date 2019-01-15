@@ -1,7 +1,7 @@
 import Vue, { VueConstructor, WatchOptions } from 'vue'
 import { createDecorator } from 'vue-class-component'
 
-export function Persistance(key: string, storage?: any) {
+export default function Persistance(key: string, storage?: any) {
 	if(!storage) storage = window.localStorage;
 	var persisted, persitanceMixin, props = {}, persist = storage.setItem ? ()=> {
 			if(Persist.persisting) storage.setItem(key, JSON.stringify(persisted));

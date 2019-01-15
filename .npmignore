@@ -3,3 +3,4 @@ npm-debug.log
 .vscode
 package-lock.*
 *.lock
+.rpt2_cache

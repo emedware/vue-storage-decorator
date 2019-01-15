@@ -4,7 +4,7 @@
 		"sourceMap": true,
 		"declaration": true,
 		"noImplicitAny": false,
-		"module": "commonjs",
+		"module": "ES2015",
 		"moduleResolution": "node",
 		"experimentalDecorators": true,
 		"emitDecoratorMetadata": true,
@@ -15,8 +15,8 @@
 			"es6"
 		],
 		"allowSyntheticDefaultImports": true,
-		"typeRoots": ["node_modules/@types"],
-		"baseUrl": "./"
+		"typeRoots": ["../node_modules/@types"],
+		"baseUrl": "."
 	},
 	"exclude": [
 		"**/*.spec.ts"
