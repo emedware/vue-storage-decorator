@@ -1,4 +1,4 @@
-import Vue, { VueConstructor, WatchOptions } from 'vue'
+import Vue, { WatchOptions } from 'vue'
 import { createDecorator } from 'vue-class-component'
 
 export default function Persistance(key: string, storage?: any) {

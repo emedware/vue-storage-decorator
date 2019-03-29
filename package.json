@@ -1,13 +1,13 @@
 {
   "name": "vue-storage-decorator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Give a Persist decorator to persist vue object properties to some storage",
   "main": "dist/vue-storage-decorator.js",
   "ts:main": "src/index.ts",
-  "typings": "dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "prepack": "webpack"
+    "prepack": "rollup -c"
   },
   "repository": {
     "type": "git",
@@ -26,11 +26,11 @@
     "url": "https://github.com/eddow/vue-storage-decorator/issues"
   },
   "homepage": "https://github.com/eddow/vue-storage-decorator#readme",
-  "dependencies": {
-    "vue-class-component": "^6.3.2",
-    "vue": "^2.5.17"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "rollup": "^1.7.4",
+    "rollup-plugin-delete": "^0.2.1",
+    "rollup-plugin-typescript2": "^0.20.1",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^5.3.0",
     "typescript": "^3.1.6",
@@ -41,7 +41,6 @@
     "webpack-node-externals": "^1.7.2"
   },
   "peerDependencies": {
-    "vue-class-component": "^6.3.2",
-    "vue": "^2.5.17"
+    "vue-class-component": "^6.3.2"
   }
 }

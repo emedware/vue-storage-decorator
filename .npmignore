@@ -4,3 +4,5 @@ npm-debug.log
 package-lock.*
 *.lock
 .rpt2_cache
+webpack.*
+rollup.*
