@@ -52,4 +52,4 @@ Persist.persist();
 ## TODO
 
 - rollup generates index.d.ts in the root folder when `"declaration": true,`
-- `npm run prepack` raises errors while `rollup -c` does not
+- `npm run build` raises errors while `rollup -c` does not

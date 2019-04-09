@@ -30,7 +30,7 @@ export default function Persistance(key: string, storage?: any) {
 		persisted = JSON.parse(retrieved);
 		persitanceMixin = {
 			data() {
-				return persisted;
+				return Object.assign({}, persisted);
 			},
 			created() {
 				watchAll(this);
