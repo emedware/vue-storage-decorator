@@ -42,8 +42,6 @@ export default function Persistance(key: string, storage?: any) {
 			created() {
 				for(let prop in props)
 					persisted[prop] = this[prop];
-				//Other `created` might have already changed the data
-				persist();
 				watchAll(this);
 			}
 		};

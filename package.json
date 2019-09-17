@@ -1,6 +1,6 @@
 {
   "name": "vue-storage-decorator",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Give a Persist decorator to persist vue object properties to some storage",
   "main": "dist/vue-storage-decorator.js",
   "ts:main": "src/index.ts",
